@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>789 Technologies</title>
+  <link rel="icon" href="789tech.svg" type="image/svg+xml">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Logo Styles */
+    .logo-container {
+        margin-top: 3rem;
+        opacity: 0; /* Start invisible */
+        position: relative; /* For absolute positioning of pseudo-element */
+        animation: neon-glow 3s linear forwards; /* Apply animation */
+    }
+
+    .logo-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.4); /* Initial subtle glow */
+        pointer-events: none; /* Prevent interference with clicks */
+    }
+
+    .logo-container.visible::before {
+        animation: logo-pulse 1.5s linear infinite;
+    }
+
+    .logo {
+      width: 200px;
+      height: auto;
+      display: block;
+      position: relative; /* Ensure logo is above the glow */
+      z-index: 1; /* Ensure logo is above the glow */
+    }
+
+    /* Content Container */
+    .container {
+      max-width: 600px;
+      padding: 1.5rem;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #c0c0c0;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1rem;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    input[type="email"] {
+      padding: 0.5rem 0.75rem;
+      border: none;
+      border-radius: 1px;
+      background-color: #333;
+      color: #f0f0f0;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.95rem;
+      flex: 1 1 auto;
+      flex-shrink: 1;
+      width: auto;
+      min-width: 300px;
+      max-width: 100%;
+    }
+
+    button {
+      background-color: #c0c0c0;
+      color: #121212;
+      border: none;
+      border-radius: 1px;
+      padding: 0.5rem 0.5rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      flex-basis: 100px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      background-color: #d0d0d0;
+    }
+
+    /* Footer Note */
+    .note {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+
+    /* Neon Glow Animation */
+    @keyframes neon-glow {
+      0% {
+        opacity: 0;
+        filter: brightness(0); /* Start completely dark */
+      }
+      /* Rapid Flickers */
+      2% {
+        opacity: 0.2;
+        filter: brightness(0.5);
+      }
+      3% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      4% {
+        opacity: 0.3;
+        filter: brightness(0.6);
+      }
+      8% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      9% {
+        opacity: 0.4;
+        filter: brightness(0.7);
+      }
+      14% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      /* Slower Flickers */
+      15% {
+        opacity: 0.55;
+        filter: brightness(0.75);
+      }
+      16% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      20% {
+        opacity: 0.6;
+        filter: brightness(0.85);
+      }
+      24% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      28% {
+        opacity: 0.7;
+        filter: brightness(0.95);
+      }
+      32% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      /* Partial Opacity */
+      36% {
+        opacity: 0.5;
+        filter: brightness(1);
+      }
+      40% {
+        opacity: 0;
+        filter: brightness(0);
+      }
+      55% {
+        opacity: 0.5;
+        filter: brightness(1);
+      }
+      /* Gradual Increase to Full Opacity */
+      58% {
+        opacity: 0.1;
+        filter: brightness(1);
+      }
+      64% {
+        opacity: 0.4;
+        filter: brightness(1);
+      }
+      70% {
+        opacity: 0.45;
+        filter: brightness(1); /* Slightly brighter */
+      }
+      78% {
+        opacity: 0.7;
+        filter: brightness(1);
+      }
+      86% {
+        opacity: 0.8;
+        filter: brightness(1.1);
+      }
+      95% {
+        opacity: 0.8;
+        filter: brightness(1.2); /* Slightly brighter */
+      }
+      100% {
+        opacity: 1;
+        filter: brightness(1.5); /* Maintain full opacity */
+      }
+    }
+
+    /* Logo Pulse Animation */
+    @keyframes logo-pulse {
+      0% {
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.7); /* Start with subtle glow */
+      }
+      50% {
+        filter: drop-shadow(0 0 3px #c0c0c0) brightness(0.9); /* Reduced glow */
+      }
+      100% {
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(7); /* Back to subtle glow */
+      }
+    }
+    .logo.visible {
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(1); /* Initial subtle glow */
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 500px) {
+      form {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: stretch;
+      }
+      input[type="email"] {
+        max-width: 100%; /* Allow full width on small screens */
+      }
+      button {
+        flex-basis: auto; /* Allow button to take full width */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img class="logo" src="789tech.svg" alt="789 Technologies">
+  </div>
+  <div class="container">
+    <p>Pioneering AI solutions today.<br/>Transforming enterprises for tomorrow.</p>
+    <form action="#" method="POST">
+      <input type="email" name="email" placeholder="Save my email address, and on launch day" required>
+      <button type="submit">notify me.</button>
+    </form>
+    <p class="note">One email message. Unsubscribe anytime.</p>
+  </div>
+  <script>
+    const logo = document.querySelector('.logo');
+    const logoContainer = document.querySelector('.logo-container');
+
+    logoContainer.addEventListener('animationend', () => {
+        logo.classList.add('visible');
+        startRandomPulse();
+    });
+
+    function startRandomPulse() {
+        function pulse() {
+            const randomDuration = Math.random() * 900 + 1200; // Random duration between 1.5s and 2.5s
+            logo.style.animation = `logo-pulse ${randomDuration}ms linear infinite`;
+            setTimeout(pulse, randomDuration);
+        }
+        pulse();
+    }
+  </script>
+</body>
+</html>
