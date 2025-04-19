@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>789 Technologies</title>
-  <link rel="icon" href="789tech.svg" type="image/svg+xml">
+  <link rel="icon" href="789lgw.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
     body {
-      font-family: 'Roboto Mono', monospace;
+      font-family: "Share Tech Mono", monospace;
+      font-weight: 500;
+      font-style: normal;
       background-color: #121212;
       color: #f0f0f0;
       display: flex;
@@ -22,12 +26,10 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Logo Styles */
     .logo-container {
-        margin-top: 3rem;
-        opacity: 0; /* Start invisible */
-        position: relative; /* For absolute positioning of pseudo-element */
-        animation: neon-glow 3s linear forwards; /* Apply animation */
+        opacity: 0;
+        position: relative;
+        animation: neon-glow 3s linear forwards;
     }
 
     .logo-container::before {
@@ -37,8 +39,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.4); /* Initial subtle glow */
-        pointer-events: none; /* Prevent interference with clicks */
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.2);
+        pointer-events: none;
     }
 
     .logo-container.visible::before {
@@ -46,95 +48,91 @@
     }
 
     .logo {
-      width: 200px;
+      width: 320px;
       height: auto;
       display: block;
-      position: relative; /* Ensure logo is above the glow */
-      z-index: 1; /* Ensure logo is above the glow */
+      position: relative;
+      z-index: 1;
     }
 
-    /* Content Container */
     .container {
       max-width: 600px;
       padding: 1.5rem;
     }
 
-    /* Typography */
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #c0c0c0;
-      font-weight: 500;
-    }
-
     p {
-      font-size: 1.1rem;
+      font-family: "Share Tech Mono", monospace;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.5rem;
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
     }
 
-    /* Form Styles */
     form {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      margin-top: 1rem;
-      flex-wrap: nowrap;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    }
+
+    input[type="email"],
+    button {
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
     }
 
     input[type="email"] {
-      padding: 0.5rem 0.75rem;
-      border: none;
-      border-radius: 1px;
-      background-color: #333;
-      color: #f0f0f0;
-      font-family: 'Roboto Mono', monospace;
-      font-size: 0.95rem;
-      flex: 1 1 auto;
-      flex-shrink: 1;
-      width: auto;
-      min-width: 300px;
-      max-width: 100%;
-      letter-spacing: 0em;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 1px;
+    background-color: #333;
+    color: #f0f0f0;
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.95rem;
+    letter-spacing: 0em;
     }
 
-    input::-webkit-input-placeholder { letter-spacing: 0.01em; }
-    input::-moz-placeholder { letter-spacing: 0.01em; }
-    input:-ms-input-placeholder { letter-spacing: 0.01em; }
-    input::placeholder { letter-spacing: 0.01em; }
-
     button {
-      background-color: #c0c0c0;
-      color: #121212;
-      border: none;
-      border-radius: 1px;
-      padding: 0.5rem 0.5rem;
-      font-family: 'Roboto Mono', monospace;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      flex-basis: 100px;
-      flex-shrink: 0;
-      white-space: nowrap;
+    background-color: #c0c0c0;
+    color: #121212;
+    border: none;
+    border-radius: 1px;
+    padding: 0.5rem;
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
     }
 
     button:hover {
-      background-color: #d0d0d0;
+    background-color: #d0d0d0;
     }
 
-    /* Footer Note */
+    input::-webkit-input-placeholder { text-align: center; }
+    input::-moz-placeholder { text-align: center; }
+    input:-ms-input-placeholder { text-align: center; }
+    input::placeholder { text-align: center; }
+
     .note {
       font-size: 0.8rem;
       color: #999;
       margin-top: 0.5rem;
+      text-transform: none;
     }
 
     /* Neon Glow Animation */
     @keyframes neon-glow {
       0% {
         opacity: 0;
-        filter: brightness(0); /* Start completely dark */
+        filter: brightness(0);
       }
       /* Rapid Flickers */
       2% {
@@ -210,7 +208,7 @@
       }
       70% {
         opacity: 0.45;
-        filter: brightness(1); /* Slightly brighter */
+        filter: brightness(1);
       }
       78% {
         opacity: 0.7;
@@ -222,59 +220,38 @@
       }
       95% {
         opacity: 0.8;
-        filter: brightness(1.2); /* Slightly brighter */
+        filter: brightness(1.2);
       }
       100% {
         opacity: 1;
-        filter: brightness(1.5); /* Maintain full opacity */
+        filter: brightness(1.5);
       }
     }
-
-    /* Logo Pulse Animation */
     @keyframes logo-pulse {
       0% {
-        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.7); /* Start with subtle glow */
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.7);
       }
       50% {
-        filter: drop-shadow(0 0 3px #c0c0c0) brightness(0.9); /* Reduced glow */
+        filter: drop-shadow(0 0 3px #c0c0c0) brightness(0.9);
       }
       100% {
-        filter: drop-shadow(0 0 2px #c0c0c0) brightness(7); /* Back to subtle glow */
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(7);
       }
     }
     .logo.visible {
-        filter: drop-shadow(0 0 2px #c0c0c0) brightness(1); /* Initial subtle glow */
-    }
-
-    /* Media query for smaller screens */
-    @media (max-width: 500px) {
-      form {
-        flex-direction: column; /* Stack vertically on small screens */
-        align-items: stretch;
-      }
-      input[type="email"] {
-        max-width: 100%; /* Allow full width on small screens */
-      }
-        input::-webkit-input-placeholder { letter-spacing: 0.01em; }
-        input::-moz-placeholder { letter-spacing: 0.01em; }
-        input:-ms-input-placeholder { letter-spacing: 0.01em; }
-        input::placeholder { letter-spacing: 0.01em; }
-      
-      button {
-        flex-basis: auto; /* Allow button to take full width */
-      }
+        filter: drop-shadow(0 0 2px #c0c0c0) brightness(1);
     }
   </style>
 </head>
 <body>
   <div class="logo-container">
-    <img class="logo" src="789tech.svg" alt="789 Technologies">
+    <img class="logo" src="789lgw.svg" alt="789 Technologies">
   </div>
   <div class="container">
-    <p>Built on today’s AI.<br/>Designed for tomorrow’s enterprise.</p>
+    <p>Building on today’s AI.<br/>Designing for tomorrow’s enterprise.</p>
     <form action="#" method="POST">
-      <input type="email" name="email" placeholder="Save my email address, and on launch day" required>
-      <button type="submit">notify me.</button>
+      <input type="email" name="email" placeholder="Save my email address." required>
+      <button type="submit">Notify me on launch day.</button>
     </form>
     <p class="note">One email message. Unsubscribe anytime.</p>
   </div>
