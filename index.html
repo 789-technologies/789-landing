@@ -72,10 +72,10 @@
       font-family: "Share Tech Mono", monospace;
       font-weight: 900;
       font-style: normal;
-      font-size: 1.2rem;
-      line-height: 1.9rem;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
       margin-top: 2rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       text-transform: uppercase;
       letter-spacing: 0cap;
     }
@@ -136,6 +136,7 @@
       font-size: 0.7rem;
       color: #999;
       margin-top: 0.5rem;
+      text-transform: uppercase;
     }
 
     /* Neon Glow Animation */
@@ -258,7 +259,7 @@
     <img class="logo" src="789lgw.svg" alt="789 Technologies">
   </div>
   <div class="container">
-    <p>Building on the AI of today.<br/>&mdash; &mdash; &mdash;<br/>Designing for the enterprise<br/>of tomorrow.</p>
+    <p>Today’s intelligence.<br/>Tomorrow’s enterprise.</p>
     <form id="signup-form">
       <input type="email" name="email" placeholder="Save my email address" required>
       <input type="hidden" name="_captcha" value="false">
@@ -266,8 +267,9 @@
       <button type="submit">Notify me on launch</button>
     </form>
     <p class="note">One email message. Unsubscribe anytime.</p>
-    <div id="ty" class="note" style="display:none; margin-top: 1rem;">You're on the list. We’ll be in touch.</div>
+    <div class="note" id="ty" class="note" style="display:none; margin-top: 1rem;">You're on the list. We’ll be in touch.</div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     const logo = document.querySelector('.logo');
     const logoContainer = document.querySelector('.logo-container');
@@ -276,7 +278,6 @@
         logo.classList.add('visible');
         startRandomPulse();
     });
-
     function startRandomPulse() {
         function pulse() {
             const randomDuration = Math.random() * 900 + 1200;
@@ -285,33 +286,13 @@
         }
         pulse();
     }
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    const _logo = document.querySelector('.logo');
-    const _logoContainer = document.querySelector('.logo-container');
-  
-    _logoContainer.addEventListener('animationend', () => {
-      _logo.classList.add('visible');
-        startRandomPulse();
-    });
-  
-    function startRandomPulse() {
-        function pulse() {
-            const randomDuration = Math.random() * 900 + 1200;
-            _logo.style.animation = `logo-pulse ${randomDuration}ms linear infinite`;
-            setTimeout(pulse, randomDuration);
-        }
-        pulse();
-    }
-  
     $('#signup-form').on('submit', function(e) {
       e.preventDefault();
 
       const email = $(this).find('input[name="email"]').val();
       const honey = $(this).find('input[name="_honey"]').val();
 
-      if (honey.length > 0) return; // Bot detected
+      if (honey.length > 0) return; // bot
 
       $.ajax({
         method: 'POST',
@@ -320,6 +301,7 @@
         accepts: 'application/json',
         data: { email: email },
         success: function() {
+          $('.note').fadeOut(300);
           $('#signup-form').fadeOut(300, () => {
             $('#ty').fadeIn(400);
           });
