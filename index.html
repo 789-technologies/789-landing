@@ -309,9 +309,9 @@
       e.preventDefault();
 
       const email = $(this).find('input[name="email"]').val();
-      const gotcha = $(this).find('input[name="_gotcha"]').val();
+      const honey = $(this).find('input[name="_honey"]').val();
 
-      if (gotcha.length > 0) return; // Bot detected
+      if (honey.length > 0) return; // Bot detected
 
       $.ajax({
         method: 'POST',
