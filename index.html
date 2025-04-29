@@ -6,9 +6,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-P482WGY9PV');
   </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>789 Technologies</title>
@@ -16,11 +16,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: "Share Tech Mono", monospace;
       font-weight: 500;
-      font-style: normal;
       background-color: #121212;
       color: #f0f0f0;
       display: flex;
@@ -34,25 +34,43 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
+    .body {
+      max-width: 400px;
+      margin: 3rem auto 0;
+      padding: 0 1rem;
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .body p {
+      margin-bottom: 1.8rem;
+    }
+
+    .body p:last-child {
+      color: #f0f0f0;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
     .logo-container {
-        opacity: 0;
-        position: relative;
-        animation: neon-glow 3s linear forwards;
+      opacity: 0;
+      position: relative;
+      animation: neon-glow 3s linear forwards;
     }
 
     .logo-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.2);
-        pointer-events: none;
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 0 2px #c0c0c0) brightness(0.2);
+      pointer-events: none;
     }
 
     .logo-container.visible::before {
-        animation: logo-pulse 1.5s linear infinite;
+      animation: logo-pulse 1.5s linear infinite;
     }
 
     .logo {
@@ -61,82 +79,99 @@
       display: block;
       position: relative;
       z-index: 1;
+      margin-top: 5rem;
     }
 
     .container {
       max-width: 600px;
-      padding: 1.5rem;
+      padding: 2rem;
     }
 
-    p {
-      font-family: "Share Tech Mono", monospace;
-      font-weight: 900;
-      font-style: normal;
-      font-size: 1.4rem;
-      line-height: 2.2rem;
-      margin-top: 2rem;
-      margin-bottom: 2.5rem;
+    .meaning {
+      margin-top: 1.5rem;
+      text-align: center;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+
+    .meaning h2 {
+      font-size: 1.8rem;
+      color: #f0f0f0;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      letter-spacing: 0cap;
+    }
+
+    .meaning p {
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      letter-spacing: 0.03em;
+      font-weight: 600;
+      margin-top: -1rem;
     }
 
     form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
     }
 
     input[type="email"],
     button {
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
     }
 
     input[type="email"] {
-    padding: 0.5rem 0.75rem;
-    border: none;
-    border-radius: 1px;
-    background-color: #333;
-    color: #f0f0f0;
-    font-family: "Share Tech Mono", monospace;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 0.9rem;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  button {
-    background-color: #c0c0c0;
-    color: #121212;
-    border: none;
-    border-radius: 1px;
-    padding: 0.5rem;
-    font-family: "Share Tech Mono", monospace;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    text-transform: uppercase;
-  }
-
-    button:hover {
-    background-color: #d0d0d0;
+      padding: 0.5rem 0.75rem;
+      border: none;
+      border-radius: 1px;
+      background-color: #333;
+      color: #f0f0f0;
+      font-family: "Share Tech Mono", monospace;
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-align: center;
+      text-transform: uppercase;
     }
 
-    input::-webkit-input-placeholder { text-align: center; }
-    input::-moz-placeholder { text-align: center; }
-    input:-ms-input-placeholder { text-align: center; }
-    input::placeholder { text-align: center; }
+    button {
+      background-color: #c0c0c0;
+      color: #121212;
+      font-family: "Share Tech Mono", monospace;
+      font-weight: 300;
+      border: none;
+      border-radius: 1px;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background-color: #d0d0d0;
+    }
+
+    input::placeholder {
+      text-align: center;
+    }
 
     .note {
       font-size: 0.7rem;
       color: #999;
       margin-top: 0.5rem;
+      text-transform: none;
+    }
+
+    .footer {
+      color: #999;
+      margin-top: 2rem;
       text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 400;
     }
 
     /* Neon Glow Animation */
@@ -250,25 +285,53 @@
       }
     }
     .logo.visible {
-        filter: drop-shadow(0 0 2px #c0c0c0) brightness(1);
+      filter: drop-shadow(0 0 2px #c0c0c0) brightness(1);
     }
   </style>
 </head>
+
 <body>
   <div class="logo-container">
     <img class="logo" src="789lgw.svg" alt="789 Technologies">
   </div>
+
   <div class="container">
-    <p>Today’s intelligence.<br/>Tomorrow’s enterprise.</p>
+    
+    <div class="meaning">
+      <h2>MAKE MEANING.</h2>
+      <p>The only metric that matters.</p>
+    </div>
+    
+    <div class="body">
+      <p>Innovation is not enough.<br>
+      A forward-looking enterprise — one that anticipates, adapts, and leads — demands intelligent execution.</p>
+    
+      <p>In the new age of AI, success is reserved for those who move with clarity, act with precision, and build with meaning.</p>
+    
+      <p>At 789 Technologies, we engineer agentic systems that connect strategy to action, transform inertia into momentum, and turn insight into decisive outcomes.</p>
+    
+      <p>Leadership isn’t measured by volume.<br>
+      It’s measured by consequence.<br>
+      By impact. By meaning.</p>
+    </div>
+      
     <form id="signup-form">
       <input type="email" name="email" placeholder="Save my email address" required>
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <button type="submit">Notify me on launch</button>
+      <button type="submit">Notify me at launch</button>
     </form>
+
     <p class="note">One email message. Unsubscribe anytime.</p>
-    <div class="note" id="ty" class="note" style="display:none; margin-top: 1rem;">You're on the list. We’ll be in touch.</div>
+
+    <div class="note" id="ty" style="display:none; margin-top: 1rem;">You're on the list. We’ll be in touch.</div>
+
+    <footer class="footer">
+      <p>&copy; 2025 789 Technologies. All rights reserved.</p>
+    </footer>
+
   </div>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     const logo = document.querySelector('.logo');
@@ -278,6 +341,7 @@
         logo.classList.add('visible');
         startRandomPulse();
     });
+
     function startRandomPulse() {
         function pulse() {
             const randomDuration = Math.random() * 900 + 1200;
@@ -286,12 +350,11 @@
         }
         pulse();
     }
+
     $('#signup-form').on('submit', function(e) {
       e.preventDefault();
-
       const email = $(this).find('input[name="email"]').val();
       const honey = $(this).find('input[name="_honey"]').val();
-
       if (honey.length > 0) return; // bot
 
       $.ajax({
